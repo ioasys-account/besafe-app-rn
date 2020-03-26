@@ -24,6 +24,11 @@ module.exports = {
         groups: ['external', ['internal', 'sibling']]
       }
     ],
-    strict: 0
+    strict: 0,
+    settings: {
+      'import/resolver': {
+        'babel-module': {}
+      }
+    }
   }
 };

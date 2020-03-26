@@ -1,3 +1,3 @@
 import { combineReducers } from 'redux';
 
-export default null;
+export default combineReducers({ teste: () => null });
