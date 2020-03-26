@@ -1,17 +1,21 @@
 import 'react-native-gesture-handler';
 import React from 'react';
+import { KeyboardAvoidingView, Platform } from 'react-native';
 import { Provider } from 'react-redux';
 
-import { configReducer } from 'store/reducerConfig';
+import store from 'store/reducerConfig';
 
 import Navigator from 'config/routes';
-
-const store = configReducer();
 
 const App = () => {
   return (
     <Provider store={store}>
-      <Navigator />
+      <KeyboardAvoidingView
+        style={{ flex: 1 }}
+        behavior={Platform.Os == 'ios' ? 'padding' : 'height'}
+      >
+        <Navigator />
+      </KeyboardAvoidingView>
     </Provider>
   );
 };
