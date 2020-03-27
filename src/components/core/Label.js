@@ -28,7 +28,6 @@ Label.defaultProps = {
   textAlign: 'left',
   fontStyle: 'normal',
   fontSize: 14,
-  fontWeight: 400
 };
 
 Label.propTypes = {
@@ -50,7 +49,6 @@ Label.propTypes = {
   paddingLeft: PropTypes.number,
   paddingRight: PropTypes.number,
   fontSize: PropTypes.number,
-  fontWeight: PropTypes.number,
   minHeight: PropTypes.number,
   children: PropTypes.oneOfType(PropTypes.shape({}), PropTypes.string).isRequired
 };
@@ -74,7 +72,7 @@ const StyledLabel = styled.Text`
   font-weight: ${({ fontWeight }) => fontWeight};
   font-style: ${({ fontStyle }) => fontStyle};
   text-align: ${({ textAlign }) => textAlign};
-  font-size: ${({ fontSize }) => fontSize};
+  font-size: ${({ fontSize }) => fontSize}px;
   font-weight: ${({ fontWeight }) => fontWeight};
 `;
 
