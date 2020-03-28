@@ -4,12 +4,15 @@ const COLORS = {
   white: '#FFFFFF',
   orange: '#F19424',
   primary: '#DA1F26',
+  grey: '#BFBFBF',
+  red: '#DA1F26',
 
   /* Background Colors */
   background: '#E5E5E5',
 
   /* Text Colors */
   defaultText: '#4C4C4C',
+  defaultTextLight: '#909090',
 
   /* Status Colors */
   successColor: '#5DC0AD',

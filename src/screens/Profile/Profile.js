@@ -1,15 +1,13 @@
 import React from 'react';
-import Label from 'components/core/Label';
 import { Container } from 'screens/Profile/styles';
-import TextInput from 'components/core/TextInput';
+import { ProfileContainer } from 'containers/Profile';
+import Button from 'components/core/Button';
+import { View } from 'react-native';
 
-const Profile = () => (
+const ProfileScreen = () => (
   <Container>
-    <Label fontWeight='bold' fontSize={32}>
-      {'Criar perfil'}
-    </Label>
-    <TextInput placeholder="Nome completo" />
+    <ProfileContainer />
   </Container>
 );
 
-export default Profile;
+export default ProfileScreen;
