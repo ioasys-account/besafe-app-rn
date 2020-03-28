@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import PickerSelect from 'react-native-picker-select';
 import PropTypes from 'prop-types';
 import iconArrow from 'assets/icons/arrow-down.png';
 import { Image, TouchableWithoutFeedback, View, Text } from 'react-native';

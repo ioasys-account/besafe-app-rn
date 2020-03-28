@@ -8,7 +8,7 @@ const COLORS = {
   red: '#DA1F26',
 
   /* Background Colors */
-  background: '#E5E5E5',
+  background: '#F5F5F5',
 
   /* Text Colors */
   defaultText: '#4C4C4C',

@@ -14,8 +14,8 @@ const Container = styled.View`
   border: ${({ primary }) => (primary ? 'none' : `solid 2px ${COLORS.red}`)};
 `;
 
-const Button = ({ label, primary }) => (
-  <TouchableOpacity>
+const Button = ({ label, primary, action }) => (
+  <TouchableOpacity onPress={(...parameters) => action(...parameters)}>
     <Container primary={primary}>
       <Label color={primary ? COLORS.white : COLORS.red} fontSize={18}>
         {label}
@@ -26,12 +26,14 @@ const Button = ({ label, primary }) => (
 
 Button.propTypes = {
   label: PropTypes.string,
-  primary: PropTypes.bool
+  primary: PropTypes.bool,
+  action: PropTypes.func
 };
 
 Button.defaultProps = {
   label: '',
-  primary: true
+  primary: true,
+  action: () => {}
 };
 
 export default Button;
