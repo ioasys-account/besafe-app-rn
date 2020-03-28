@@ -36,7 +36,7 @@ const ProfilePresentation = () => {
         <DatePicker label='Data de nascimento' marginTop='24px' />
         <Checkbox label='Manter meus dados em sigilo' marginTop='24px' />
       </FormContainer>
-      <Button label='Próximo' primary={false} action={() => navigate('PreConditions')} />
+      <Button label='Próximo' action={() => navigate('PreConditions')} />
     </Container>
   );
 };
