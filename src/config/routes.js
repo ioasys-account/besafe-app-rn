@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { Profile as ProfileScreen, SuccessScreen } from 'screens/Profile';
 import { PreConditionsScreen } from 'screens/PreConditions';
+import { RiskScreen } from 'screens/Risk';
 
 const HomeScreen = () => {
   return (
@@ -17,11 +18,12 @@ const Stack = createStackNavigator();
 
 const Navigator = () => (
   <NavigationContainer>
-    <Stack.Navigator headerMode='none' initialRouteName='Success'>
+    <Stack.Navigator headerMode='none' initialRouteName='Profile'>
       <Stack.Screen name='Home' component={HomeScreen} />
       <Stack.Screen name='Profile' component={ProfileScreen} />
       <Stack.Screen name='PreConditions' component={PreConditionsScreen} />
       <Stack.Screen name='Success' component={SuccessScreen} />
+      <Stack.Screen name='Risk' component={RiskScreen} />
     </Stack.Navigator>
   </NavigationContainer>
 );
