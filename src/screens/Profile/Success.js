@@ -8,12 +8,12 @@ import Button from 'components/core/Button';
 import { useNavigation } from '@react-navigation/native';
 
 const Success = () => {
-  const { navigate } = useNavigation();
+  const { navigate, goBack } = useNavigation();
 
   return (
     <Container>
       <View>
-        <Header />
+        <Header customBackFunction={goBack} />
         <SuccessIcon />
         <View>
           <Label

@@ -15,7 +15,7 @@ const ProfilePresentation = () => {
   return (
     <Container>
       <FormContainer>
-        <Label fontWeight='bold' fontSize={32} color={COLORS.defaultText}>
+        <Label fontWeight='bold' fontSize={32} color={COLORS.black}>
           Criar Perfil
         </Label>
         <TextInput placeholder='Nome completo' marginTop='24px' />

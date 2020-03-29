@@ -10,34 +10,38 @@ import {
 import { View, FlatList } from 'react-native';
 import Button from 'components/core/Button';
 import Checkbox from 'components/core/Checkbox';
+import { useNavigation } from '@react-navigation/native';
 
-const PreConditionsPresentation = () => (
-  <Container>
-    <View>
-      <Label fontSize={32} color={COLORS.defaultText} fontWeight='bold'>
-        Condições preexistentes
-      </Label>
-      <Label fontSize={16} color={COLORS.defaultText} marginTop='30px'>
-        Marque condições que você possui atualmente ou já teve na vida.
-      </Label>
-    </View>
-    <ConditionsContainer>
-      <FlatList
-        data={Array.from({ length: 10 }).map((_, index) => ({
-          condition: 'Asma',
-          id: index
-        }))}
-        renderItem={({ item }) => (
-          <CheckContainer>
-            <Checkbox label={item.condition} checkPosition='right' />
-          </CheckContainer>
-        )}
-        ItemSeparatorComponent={() => <Separator />}
-        keyExtractor={item => item.id.toString()}
-      />
-    </ConditionsContainer>
-    <Button label='Próximo' />
-  </Container>
-);
+const PreConditionsPresentation = () => {
+  const { navigate } = useNavigation();
+  return (
+    <Container>
+      <View>
+        <Label fontSize={32} color={COLORS.black} fontWeight='bold'>
+          Condições preexistentes
+        </Label>
+        <Label fontSize={16} color={COLORS.defaultText} marginTop='30px'>
+          Marque condições que você possui atualmente ou já teve na vida.
+        </Label>
+      </View>
+      <ConditionsContainer>
+        <FlatList
+          data={Array.from({ length: 10 }).map((_, index) => ({
+            condition: 'Asma',
+            id: index
+          }))}
+          renderItem={({ item }) => (
+            <CheckContainer>
+              <Checkbox label={item.condition} checkPosition='right' />
+            </CheckContainer>
+          )}
+          ItemSeparatorComponent={() => <Separator />}
+          keyExtractor={item => item.id.toString()}
+        />
+      </ConditionsContainer>
+      <Button label='Próximo' action={() => navigate('Risk')} />
+    </Container>
+  );
+};
 
 export default PreConditionsPresentation;

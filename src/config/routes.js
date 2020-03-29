@@ -18,7 +18,7 @@ const Stack = createStackNavigator();
 
 const Navigator = () => (
   <NavigationContainer>
-    <Stack.Navigator headerMode='none' initialRouteName='Risk'>
+    <Stack.Navigator headerMode='none' initialRouteName='Profile'>
       <Stack.Screen name='Home' component={HomeScreen} />
       <Stack.Screen name='Profile' component={ProfileScreen} />
       <Stack.Screen name='PreConditions' component={PreConditionsScreen} />
