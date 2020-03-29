@@ -1,8 +1,8 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator, Header } from '@react-navigation/stack';
-import { Profile as ProfileScreen } from 'screens/Profile';
+import { createStackNavigator } from '@react-navigation/stack';
+import { Profile as ProfileScreen, SuccessScreen } from 'screens/Profile';
 import { PreConditionsScreen } from 'screens/PreConditions';
 
 const HomeScreen = () => {
@@ -17,10 +17,11 @@ const Stack = createStackNavigator();
 
 const Navigator = () => (
   <NavigationContainer>
-    <Stack.Navigator headerMode='none' initialRouteName='Profile'>
+    <Stack.Navigator headerMode='none' initialRouteName='Success'>
       <Stack.Screen name='Home' component={HomeScreen} />
       <Stack.Screen name='Profile' component={ProfileScreen} />
       <Stack.Screen name='PreConditions' component={PreConditionsScreen} />
+      <Stack.Screen name='Success' component={SuccessScreen} />
     </Stack.Navigator>
   </NavigationContainer>
 );

@@ -1,2 +1,4 @@
 import Profile from 'screens/Profile/Profile';
-export { Profile };
+import SuccessScreen from 'screens/Profile/Success';
+
+export { Profile, SuccessScreen };
