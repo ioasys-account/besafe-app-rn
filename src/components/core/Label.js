@@ -50,7 +50,7 @@ Label.propTypes = {
   paddingRight: PropTypes.number,
   fontSize: PropTypes.number,
   minHeight: PropTypes.number,
-  children: PropTypes.oneOfType(PropTypes.shape({}), PropTypes.string).isRequired
+  children: PropTypes.any.isRequired
 };
 
 const StyledLabel = styled.Text`
