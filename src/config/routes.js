@@ -2,9 +2,10 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { Profile as ProfileScreen, SuccessScreen } from 'screens/Profile';
+import { Profile as ProfileScreen } from 'screens/Profile';
 import { PreConditionsScreen } from 'screens/PreConditions';
 import { RiskScreen } from 'screens/Risk';
+import { SuccessScreen } from 'screens/Success';
 
 const HomeScreen = () => {
   return (

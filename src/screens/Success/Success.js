@@ -1,13 +1,18 @@
 import React from 'react';
-import { Container, SuccessIcon } from 'screens/Profile/styles';
+import { Container, SuccessIcon } from 'screens/Success/styles';
 import Header from 'components/core/Header';
 import Label from 'components/core/Label';
 import COLORS from 'config/colors';
 import { View } from 'react-native';
 import Button from 'components/core/Button';
 import { useNavigation } from '@react-navigation/native';
+import PropTypes from 'prop-types';
 
-const Success = () => {
+const Success = ({
+  route: {
+    params: { title, subTitle }
+  }
+}) => {
   const { navigate, goBack } = useNavigation();
 
   return (
@@ -23,17 +28,25 @@ const Success = () => {
             color={COLORS.black}
             marginTop='16px'
           >
-            Cadastro{'\n'}concluído!
+            {title}
           </Label>
           <Label textAlign='center' fontSize={16} marginTop='16px'>
-            Agora é hora de registrar como você se sente. Por favor, seja atencioso e fique
-            tranquilo: vamos lidar com isso juntos!
+            {subTitle}
           </Label>
         </View>
       </View>
       <Button label='Vamos lá!' action={() => navigate('Home')} />
     </Container>
   );
+};
+
+Success.propTypes = {
+  route: PropTypes.shape({
+    params: PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      subTitle: PropTypes.string
+    })
+  })
 };
 
 export default Success;
