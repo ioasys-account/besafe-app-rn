@@ -20,7 +20,7 @@ const Stack = createStackNavigator();
 
 const Navigator = () => (
   <NavigationContainer>
-    <Stack.Navigator headerMode='none' initialRouteName='Identification'>
+    <Stack.Navigator headerMode='none' initialRouteName='Profile'>
       <Stack.Screen name='Home' component={HomeScreen} />
       <Stack.Screen name='Identification' component={IdentificationScreen} />
       <Stack.Screen name='Profile' component={ProfileScreen} />
