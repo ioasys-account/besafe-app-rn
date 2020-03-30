@@ -10,10 +10,10 @@ const Container = styled.View`
   padding: 16px 12px;
   border: solid 1px ${COLORS.grey};
   border-radius: 8px;
-  margin-top: ${({ marginTop }) => marginTop}
-  margin-left: ${({ marginLeft }) => marginLeft}
-  margin-right: ${({ marginRight }) => marginRight}
-  margin-bottom: ${({ marginBottom }) => marginBottom}
+  margin-top: ${({ marginTop }) => marginTop}px;
+  margin-left: ${({ marginLeft }) => marginLeft}px;
+  margin-right: ${({ marginRight }) => marginRight}px;
+  margin-bottom: ${({ marginBottom }) => marginBottom}px;
 `;
 
 const DatePicker = ({ onChange, label, marginBottom, marginLeft, marginRight, marginTop }) => {
