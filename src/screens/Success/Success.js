@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { View } from 'react-native';
+
+import { useNavigation } from '@react-navigation/native';
+import PropTypes from 'prop-types';
+import { useTranslation } from 'react-i18next';
+
 import { Container, SuccessIcon } from 'screens/Success/styles';
 import Header from 'components/core/Header';
 import Label from 'components/core/Label';
 import COLORS from 'config/colors';
-import { View } from 'react-native';
 import Button from 'components/core/Button';
-import { useNavigation } from '@react-navigation/native';
-import PropTypes from 'prop-types';
+import { getLanguage } from 'helpers';
 
 const Success = ({
   route: {
@@ -14,6 +18,11 @@ const Success = ({
   }
 }) => {
   const { navigate, goBack } = useNavigation();
+  const { t: translate, i18n } = useTranslation();
+
+  useEffect(() => {
+    i18n.changeLanguage(getLanguage());
+  }, []);
 
   return (
     <Container>
@@ -26,16 +35,17 @@ const Success = ({
             fontSize={32}
             fontWeight='bold'
             color={COLORS.black}
-            marginTop='16px'
+            marginTop={16}
+            lineHeight={40}
           >
             {title}
           </Label>
-          <Label textAlign='center' fontSize={16} marginTop='16px'>
+          <Label textAlign='center' fontSize={16} marginTop={16}>
             {subTitle}
           </Label>
         </View>
       </View>
-      <Button label='Vamos lá!' action={() => navigate('Home')} />
+      <Button label={translate('lets-go')} action={() => navigate('Home')} />
     </Container>
   );
 };

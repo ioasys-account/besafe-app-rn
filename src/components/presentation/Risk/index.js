@@ -1,2 +1,2 @@
-import RiskPresentation from 'components/presentation/Risk/Risk';
+import RiskPresentation from './Risk';
 export { RiskPresentation };

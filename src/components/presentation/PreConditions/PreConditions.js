@@ -1,27 +1,31 @@
-import React from 'react';
-import Label from 'components/core/Label';
-import COLORS from 'config/colors';
-import {
-  Container,
-  ConditionsContainer,
-  CheckContainer,
-  Separator
-} from 'components/presentation/PreConditions/styles';
+import React, { useEffect } from 'react';
 import { View, FlatList } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { useTranslation } from 'react-i18next';
+
+import Label from 'components/core/Label';
 import Button from 'components/core/Button';
 import Checkbox from 'components/core/Checkbox';
-import { useNavigation } from '@react-navigation/native';
+import COLORS from 'config/colors';
+import { Container, ConditionsContainer, CheckContainer, Separator } from './styles';
+import { getLanguage } from 'helpers';
 
 const PreConditionsPresentation = () => {
   const { navigate } = useNavigation();
+  const { t: translate, i18n } = useTranslation();
+
+  useEffect(() => {
+    i18n.changeLanguage(getLanguage());
+  }, []);
+
   return (
     <Container>
       <View>
-        <Label fontSize={32} color={COLORS.black} fontWeight='bold'>
-          Condições preexistentes
+        <Label fontWeight='bold' fontSize={32} lineHeight={40} color={COLORS.black}>
+          {translate('pre-conditions-title')}
         </Label>
-        <Label fontSize={16} color={COLORS.defaultText} marginTop='30px'>
-          Marque condições que você possui atualmente ou já teve na vida.
+        <Label fontSize={16} color={COLORS.defaultText} marginTop={30}>
+          {translate('pre-conditions-subtitle')}
         </Label>
       </View>
       <ConditionsContainer>
@@ -39,7 +43,7 @@ const PreConditionsPresentation = () => {
           keyExtractor={item => item.id.toString()}
         />
       </ConditionsContainer>
-      <Button label='Próximo' action={() => navigate('Risk')} />
+      <Button label={translate('next')} action={() => navigate('Risk')} />
     </Container>
   );
 };

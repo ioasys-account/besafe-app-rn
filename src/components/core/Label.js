@@ -28,6 +28,7 @@ Label.defaultProps = {
   textAlign: 'left',
   fontStyle: 'normal',
   fontSize: 14,
+  lineHeight: 24
 };
 
 Label.propTypes = {
@@ -50,6 +51,7 @@ Label.propTypes = {
   paddingRight: PropTypes.number,
   fontSize: PropTypes.number,
   minHeight: PropTypes.number,
+  lineHeight: PropTypes.number,
   children: PropTypes.any.isRequired
 };
 
@@ -74,6 +76,7 @@ const StyledLabel = styled.Text`
   text-align: ${({ textAlign }) => textAlign};
   font-size: ${({ fontSize }) => fontSize}px;
   font-weight: ${({ fontWeight }) => fontWeight};
+  line-height: ${({ lineHeight }) => lineHeight}px;
 `;
 
 export default Label;

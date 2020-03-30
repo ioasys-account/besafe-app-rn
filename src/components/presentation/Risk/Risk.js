@@ -1,30 +1,33 @@
-import React from 'react';
-import Label from 'components/core/Label';
-import {
-  Container,
-  CheckContainer,
-  RiskContainer,
-  Separator
-} from 'components/presentation/Risk/styles';
-import Header from 'components/core/Header';
+import React, { useEffect } from 'react';
 import { View, FlatList } from 'react-native';
-import Button from 'components/core//Button';
-import COLORS from 'config/colors';
-import Checkbox from 'components/core/Checkbox';
 import { useNavigation } from '@react-navigation/native';
+import { useTranslation } from 'react-i18next';
+
+import Label from 'components/core/Label';
+import Header from 'components/core/Header';
+import Button from 'components/core//Button';
+import Checkbox from 'components/core/Checkbox';
+import COLORS from 'config/colors';
+import { Container, CheckContainer, RiskContainer, Separator } from './styles';
+import { getLanguage } from 'helpers';
 
 const RiskPresentation = () => {
   const { navigate, goBack } = useNavigation();
+  const { i18n, t: translate } = useTranslation();
+
+  useEffect(() => {
+    i18n.changeLanguage(getLanguage());
+  }, []);
 
   return (
     <Container>
       <View>
         <Header customBackFunction={goBack} />
-        <Label fontSize={32} color={COLORS.black} fontWeight='bold'>
-          Avaliação de risco
+        <Label fontWeight='bold' fontSize={32} lineHeight={40} color={COLORS.black}>
+          {translate('risk-assessment-title')}
         </Label>
-        <Label fontSize={16} color={COLORS.defaultText} marginTop='20px'>
-          Marque os comportamentos de risco em que você esteve.
+        <Label fontSize={16} color={COLORS.defaultText} marginTop={20}>
+          {translate('risk-assessment-subtitle')}
         </Label>
       </View>
       <RiskContainer>
@@ -42,12 +45,12 @@ const RiskPresentation = () => {
         />
       </RiskContainer>
       <Button
-        label='Próximo'
+        label={translate('next')}
         action={() =>
           navigate('Success', {
-            title: "Cadastro\nconcluído!",
+            title: translate('register-completed'),
             subTitle:
-              'Agora é hora de registrar como você se sente. Por favor, seja atencioso e fique tranquilo: vamos lidar com isso juntos!'
+              translate('profile-saved-successfully')
           })
         }
       />

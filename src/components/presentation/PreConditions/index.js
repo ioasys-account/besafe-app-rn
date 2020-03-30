@@ -1,2 +1,2 @@
-import PreConditionsPresentation from 'components/presentation/PreConditions/PreConditions';
+import PreConditionsPresentation from './PreConditions';
 export { PreConditionsPresentation };
