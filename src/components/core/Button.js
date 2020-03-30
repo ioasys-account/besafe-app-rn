@@ -22,14 +22,14 @@ const Container = styled.View`
   background-color: ${({ primary }) => (primary ? COLORS.red : 'transparent')};
   border-radius: 40px;
   border: ${({ primary }) => (primary ? 'none' : `solid 2px ${COLORS.red}`)};
-  margin-top: ${({ marginTop }) => marginTop};
+  margin-top: ${({ marginTop }) => marginTop}px;
 `;
 
 Button.propTypes = {
   label: PropTypes.string,
   primary: PropTypes.bool,
   action: PropTypes.func,
-  marginTop: PropTypes.string
+  marginTop: PropTypes.number
 };
 
 Button.defaultProps = {
