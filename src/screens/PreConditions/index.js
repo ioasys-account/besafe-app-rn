@@ -1,2 +1,2 @@
-import PreConditionsScreen from 'screens/PreConditions/PreConditions';
+import PreConditionsScreen from './PreConditions';
 export { PreConditionsScreen };

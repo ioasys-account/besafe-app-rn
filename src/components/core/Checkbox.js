@@ -17,10 +17,10 @@ const Container = styled.View`
   flex-direction: ${({ checkPosition }) => (checkPosition === 'left' ? 'row' : 'row-reverse')};
   justify-content: space-between;
   align-items: center;
-  margin-top: ${({ marginTop }) => marginTop};
-  margin-left: ${({ marginLeft }) => marginLeft};
-  margin-right: ${({ marginRight }) => marginRight};
-  margin-bottom: ${({ marginBottom }) => marginBottom};
+  margin-top: ${({ marginTop }) => marginTop}px;
+  margin-left: ${({ marginLeft }) => marginLeft}px;
+  margin-right: ${({ marginRight }) => marginRight}px;
+  margin-bottom: ${({ marginBottom }) => marginBottom}px;
   padding: 0px 10px;
 `;
 

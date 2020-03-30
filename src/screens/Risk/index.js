@@ -1,2 +1,2 @@
-import RiskScreen from 'screens/Risk/Risk';
+import RiskScreen from './Risk';
 export { RiskScreen };
