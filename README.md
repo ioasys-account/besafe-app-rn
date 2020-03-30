@@ -2,7 +2,24 @@
 
 BeSafe is a React Native App to health, with a purpose to help people in a pandemic.
 
-## Requires
+## Pre-requirements
+
+#### GIT Flow
+
+It's used as a standard for using GIT. The following branches are used:
+
+| Branch name | Description                             |
+| ----------- | --------------------------------------- |
+| master      | for production version                  |
+| develop     | for the development of the next version |
+| feature     | for new feature                         |
+| bugfix      | for bug fixes                           |
+| release     | for next version                        |
+| hotfix      | for bug fixes in production             |
+| support     | for bug fixing in old versions          |
+
+To learn more about GIT Flow visit
+[this article](https://medium.com/trainingcenter/utilizando-o-fluxo-git-flow-e63d5e0d5e04).
 
 ### Android
 
@@ -55,6 +72,33 @@ or
 ```bash
 yarn start
 yarn run-ios
+```
+
+## Standardization Tips
+
+### Importing dependencies.
+
+The project is following this import pattern:
+
+1. react
+2. react-native
+3. react components
+4. settings.
+5. styled-components.
+
+#### Example:
+
+```Javascript
+import React from 'react';
+import { useNavigation } from '@react-navigation/native';
+
+import Label from 'components/core/Label';
+import TextInput from 'components/core/TextInput';
+import Button from 'components/core/Button';
+
+import COLORS from 'config/colors';
+
+import { LabelContainer, ButtonContainer, FormContainer, Container } from './styles';
 ```
 
 ## Contributing
