@@ -8,10 +8,10 @@ const Input = styled.TextInput`
   border-radius: 8px;
   padding: 16px 12px;
   font-size: 18px;
-  margin-top: ${({ marginTop }) => marginTop};
-  margin-left: ${({ marginLeft }) => marginLeft};
-  margin-right: ${({ marginRight }) => marginRight};
-  margin-bottom: ${({ marginBottom }) => marginBottom};
+  margin-top: ${({ marginTop }) => marginTop}px;
+  margin-left: ${({ marginLeft }) => marginLeft}px;
+  margin-right: ${({ marginRight }) => marginRight}px;
+  margin-bottom: ${({ marginBottom }) => marginBottom}px;
 `;
 
 const TextInput = ({

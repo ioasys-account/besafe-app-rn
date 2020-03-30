@@ -26,11 +26,12 @@ const Success = ({
             fontSize={32}
             fontWeight='bold'
             color={COLORS.black}
-            marginTop='16px'
+            marginTop={16}
+            lineHeight={40}
           >
             {title}
           </Label>
-          <Label textAlign='center' fontSize={16} marginTop='16px'>
+          <Label textAlign='center' fontSize={16} marginTop={16}>
             {subTitle}
           </Label>
         </View>

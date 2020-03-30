@@ -1,13 +1,14 @@
 import React from 'react';
+import { useNavigation } from '@react-navigation/native';
+
 import Label from 'components/core/Label';
-import COLORS from 'config/colors';
 import TextInput from 'components/core/TextInput';
 import Picker from 'components/core/Picker';
 import DatePicker from 'components/core/DatePicker';
 import Checkbox from 'components/core/Checkbox';
 import Button from 'components/core/Button';
-import { FormContainer, Container } from 'components/presentation/Profile/styles';
-import { useNavigation } from '@react-navigation/native';
+import COLORS from 'config/colors';
+import { FormContainer, Container } from './styles';
 
 const ProfilePresentation = () => {
   const { navigate } = useNavigation();
@@ -15,10 +16,10 @@ const ProfilePresentation = () => {
   return (
     <Container>
       <FormContainer>
-        <Label fontWeight='bold' fontSize={32} color={COLORS.black}>
+        <Label fontWeight='bold' fontSize={32} lineHeight={40} color={COLORS.black}>
           Criar Perfil
         </Label>
-        <TextInput placeholder='Nome completo' marginTop='24px' />
+        <TextInput placeholder='Nome completo' marginTop={24} />
         <Picker
           placeholder='Sexo'
           marginTop='24px'
@@ -33,8 +34,8 @@ const ProfilePresentation = () => {
             }
           ]}
         />
-        <DatePicker label='Data de nascimento' marginTop='24px' />
-        <Checkbox label='Manter meus dados em sigilo' marginTop='24px' />
+        <DatePicker label='Data de nascimento' marginTop={24} />
+        <Checkbox label='Manter meus dados em sigilo' marginTop={24} />
       </FormContainer>
       <Button label='Próximo' action={() => navigate('PreConditions')} />
     </Container>

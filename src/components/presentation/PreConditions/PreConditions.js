@@ -1,26 +1,22 @@
 import React from 'react';
-import Label from 'components/core/Label';
-import COLORS from 'config/colors';
-import {
-  Container,
-  ConditionsContainer,
-  CheckContainer,
-  Separator
-} from 'components/presentation/PreConditions/styles';
 import { View, FlatList } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+
+import Label from 'components/core/Label';
 import Button from 'components/core/Button';
 import Checkbox from 'components/core/Checkbox';
-import { useNavigation } from '@react-navigation/native';
+import COLORS from 'config/colors';
+import { Container, ConditionsContainer, CheckContainer, Separator } from './styles';
 
 const PreConditionsPresentation = () => {
   const { navigate } = useNavigation();
   return (
     <Container>
       <View>
-        <Label fontSize={32} color={COLORS.black} fontWeight='bold'>
+        <Label fontWeight='bold' fontSize={32} lineHeight={40} color={COLORS.black}>
           Condições preexistentes
         </Label>
-        <Label fontSize={16} color={COLORS.defaultText} marginTop='30px'>
+        <Label fontSize={16} color={COLORS.defaultText} marginTop={30}>
           Marque condições que você possui atualmente ou já teve na vida.
         </Label>
       </View>
