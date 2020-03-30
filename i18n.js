@@ -12,14 +12,14 @@ const resources = {
   pt: {
     translation: {
       ...core.ptBR,
-      ...screens.enUS
+      ...screens.ptBR
     }
   }
 };
 
 i18n.use(initReactI18next).init({
   resources,
-  lng: 'en',
+  lng: 'pt',
   keySeparator: false,
   interpolation: {
     escapeValue: false

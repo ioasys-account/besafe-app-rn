@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { View, FlatList } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { useTranslation } from 'react-i18next';
 
 import Label from 'components/core/Label';
 import Header from 'components/core/Header';
@@ -8,19 +9,25 @@ import Button from 'components/core//Button';
 import Checkbox from 'components/core/Checkbox';
 import COLORS from 'config/colors';
 import { Container, CheckContainer, RiskContainer, Separator } from './styles';
+import { getLanguage } from 'helpers';
 
 const RiskPresentation = () => {
   const { navigate, goBack } = useNavigation();
+  const { i18n, t: translate } = useTranslation();
+
+  useEffect(() => {
+    i18n.changeLanguage(getLanguage());
+  }, []);
 
   return (
     <Container>
       <View>
         <Header customBackFunction={goBack} />
         <Label fontWeight='bold' fontSize={32} lineHeight={40} color={COLORS.black}>
-          Avaliação de risco
+          {translate('risk-assessment-title')}
         </Label>
         <Label fontSize={16} color={COLORS.defaultText} marginTop={20}>
-          Marque os comportamentos de risco em que você esteve.
+          {translate('risk-assessment-subtitle')}
         </Label>
       </View>
       <RiskContainer>
@@ -38,12 +45,12 @@ const RiskPresentation = () => {
         />
       </RiskContainer>
       <Button
-        label='Próximo'
+        label={translate('next')}
         action={() =>
           navigate('Success', {
-            title: "Cadastro\nconcluído!",
+            title: translate('register-completed'),
             subTitle:
-              'Agora é hora de registrar como você se sente. Por favor, seja atencioso e fique tranquilo: vamos lidar com isso juntos!'
+              translate('profile-saved-successfully')
           })
         }
       />

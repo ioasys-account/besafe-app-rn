@@ -1,4 +1,7 @@
 export default {
   next: 'Próximo',
-  gender: 'Sexo'
+  gender: 'Sexo',
+  'register-completed': 'Cadastro concluído',
+  'lets-go': 'Vamos lá!',
+  back: 'Voltar'
 };

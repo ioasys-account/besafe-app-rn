@@ -11,7 +11,7 @@ import COLORS from 'config/colors';
 const App = () => {
   return (
     <Provider store={store}>
-      <StatusBar backgroundColor={COLORS.background} barStyle="dark-content" />
+      <StatusBar backgroundColor={COLORS.background} barStyle='dark-content' />
       <KeyboardAvoidingView
         style={{ flex: 1 }}
         behavior={Platform.Os == 'ios' ? 'padding' : 'height'}

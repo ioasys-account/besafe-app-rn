@@ -1,4 +1,7 @@
 export default {
   next: 'Next',
-  gender: 'Gender'
+  gender: 'Gender',
+  'register-completed': 'Register completed',
+  'lets-go': "Let's go!",
+  back: 'Back'
 };
