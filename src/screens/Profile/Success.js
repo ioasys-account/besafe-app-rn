@@ -21,11 +21,12 @@ const Success = () => {
             fontSize={32}
             fontWeight='bold'
             color={COLORS.black}
-            marginTop='16px'
+            marginTop={16}
+            lineHeight={40}
           >
             Cadastro{'\n'}concluído!
           </Label>
-          <Label textAlign='center' fontSize={16} marginTop='16px'>
+          <Label textAlign='center' fontSize={16} marginTop={16}>
             Agora é hora de registrar como você se sente. Por favor, seja atencioso e fique
             tranquilo: vamos lidar com isso juntos!
           </Label>

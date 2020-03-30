@@ -1,17 +1,13 @@
 import React from 'react';
-import Label from 'components/core/Label';
-import {
-  Container,
-  CheckContainer,
-  RiskContainer,
-  Separator
-} from 'components/presentation/Risk/styles';
-import Header from 'components/core/Header';
 import { View, FlatList } from 'react-native';
-import Button from 'components/core//Button';
-import COLORS from 'config/colors';
-import Checkbox from 'components/core/Checkbox';
 import { useNavigation } from '@react-navigation/native';
+
+import Label from 'components/core/Label';
+import Header from 'components/core/Header';
+import Button from 'components/core//Button';
+import Checkbox from 'components/core/Checkbox';
+import COLORS from 'config/colors';
+import { Container, CheckContainer, RiskContainer, Separator } from './styles';
 
 const RiskPresentation = () => {
   const { navigate, goBack } = useNavigation();
@@ -20,10 +16,10 @@ const RiskPresentation = () => {
     <Container>
       <View>
         <Header customBackFunction={goBack} />
-        <Label fontSize={32} color={COLORS.black} fontWeight='bold'>
+        <Label fontWeight='bold' fontSize={32} lineHeight={40} color={COLORS.black}>
           Avaliação de risco
         </Label>
-        <Label fontSize={16} color={COLORS.defaultText} marginTop='20px'>
+        <Label fontSize={16} color={COLORS.defaultText} marginTop={20}>
           Marque os comportamentos de risco em que você esteve.
         </Label>
       </View>

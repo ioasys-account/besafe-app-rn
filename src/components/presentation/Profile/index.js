@@ -1,2 +1,2 @@
-import ProfilePresentation from 'components/presentation/Profile/Profile';
+import ProfilePresentation from './Profile';
 export { ProfilePresentation };
