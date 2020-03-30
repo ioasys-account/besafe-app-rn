@@ -2,11 +2,11 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-
 import { IdentificationScreen } from 'screens/Identification';
-import { Profile as ProfileScreen, SuccessScreen } from 'screens/Profile';
+import { ProfileScreen } from 'screens/Profile';
 import { PreConditionsScreen } from 'screens/PreConditions';
 import { RiskScreen } from 'screens/Risk';
+import { SuccessScreen } from 'screens/Success';
 
 const HomeScreen = () => {
   return (

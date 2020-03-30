@@ -37,7 +37,16 @@ const RiskPresentation = () => {
           ItemSeparatorComponent={() => <Separator />}
         />
       </RiskContainer>
-      <Button label='Próximo' action={() => navigate('Success')} />
+      <Button
+        label='Próximo'
+        action={() =>
+          navigate('Success', {
+            title: "Cadastro\nconcluído!",
+            subTitle:
+              'Agora é hora de registrar como você se sente. Por favor, seja atencioso e fique tranquilo: vamos lidar com isso juntos!'
+          })
+        }
+      />
     </Container>
   );
 };
