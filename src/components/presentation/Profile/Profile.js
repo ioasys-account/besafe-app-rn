@@ -8,7 +8,6 @@ import Checkbox from 'components/core/Checkbox';
 import Button from 'components/core/Button';
 import { FormContainer, Container } from 'components/presentation/Profile/styles';
 import { useNavigation } from '@react-navigation/native';
-
 const ProfilePresentation = () => {
   const { navigate } = useNavigation();
 
