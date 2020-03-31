@@ -3,10 +3,13 @@ import styled from 'styled-components/native';
 import { useTranslation } from 'react-i18next';
 import { useNavigation } from '@react-navigation/native';
 
-import arrowIcon from 'assets/icons/arrow-down.png';
 import Label from './Label';
+
 import COLORS from 'config/colors';
+
 import { getLanguage } from 'helpers';
+
+import arrowIcon from 'assets/icons/arrow-down.png';
 
 const Header = ({ title, subtitle, customBackFunction }) => {
   const { pop } = useNavigation();

@@ -9,8 +9,10 @@ import DatePicker from 'components/core/DatePicker';
 import Checkbox from 'components/core/Checkbox';
 import Button from 'components/core/Button';
 import COLORS from 'config/colors';
-import { FormContainer, Container } from './styles';
+
 import { getLanguage } from 'helpers';
+
+import { FormContainer, Container } from './styles';
 
 const ProfilePresentation = () => {
   const { navigate } = useNavigation();
@@ -30,8 +32,7 @@ const ProfilePresentation = () => {
         <Picker
           placeholder={translate('gender')}
           marginTop='24px'
-          options={
-            [
+          options={[
             {
               label: translate('profile-female'),
               value: 'female'

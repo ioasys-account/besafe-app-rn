@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-import { KeyboardAvoidingView, Platform, StatusBar } from 'react-native';
+import { KeyboardAvoidingView, Platform, StatusBar, SafeAreaView } from 'react-native';
 import { Provider } from 'react-redux';
 
 import store from 'store/reducerConfig';
@@ -12,6 +12,7 @@ const App = () => {
   return (
     <Provider store={store}>
       <StatusBar backgroundColor={COLORS.background} barStyle='dark-content' />
+      <SafeAreaView backgroundColor={COLORS.primary} />
       <KeyboardAvoidingView
         style={{ flex: 1 }}
         behavior={Platform.Os == 'ios' ? 'padding' : 'height'}
