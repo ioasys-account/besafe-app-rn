@@ -15,19 +15,15 @@ import { OnboardingScreen } from 'screens/Onboarding';
 const Stack = createStackNavigator();
 
 const Navigator = () => {
-  const [initialRoute, setInitialRoute] = useState('Onboarding');
-  const [isLoading, setIsLoading] = useState(true);
+  const [initialRoute, setInitialRoute] = useState('');
 
   useLayoutEffect(() => {
     getStoreItem('@BeSafe:TermAgreed', termAcepted => {
-      if (termAcepted === 'true') {
-        setInitialRoute('Profile');
-      }
-      setIsLoading(false);
+      setInitialRoute(termAcepted === 'true' ? 'Profile' : 'Onboarding');
     });
   }, []);
 
-  if (isLoading) return null;
+  if (!initialRoute) return null;
   return (
     <NavigationContainer>
       <Stack.Navigator headerMode='none' initialRouteName={initialRoute}>
