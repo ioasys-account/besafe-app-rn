@@ -45,15 +45,15 @@ const RiskPresentation = () => {
         />
       </RiskContainer>
       <Button
-        label={translate('next')}
-        action={() =>
+        onPress={() =>
           navigate('Success', {
             title: translate('register-completed'),
-            subTitle:
-              translate('profile-saved-successfully')
+            subTitle: translate('profile-saved-successfully')
           })
         }
-      />
+      >
+        {translate('next')}
+      </Button>
     </Container>
   );
 };

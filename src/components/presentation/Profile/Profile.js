@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import React, { useEffect, useState } from 'react';
+=======
+import React from 'react';
+>>>>>>> e2c38b84091675f766b950bee4508db721c84e80
 import { useNavigation } from '@react-navigation/native';
 import { useTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
@@ -11,8 +15,8 @@ import Picker from 'components/core/Picker';
 import DatePicker from 'components/core/DatePicker';
 import Button from 'components/core/Button';
 import COLORS from 'config/colors';
+
 import { FormContainer, Container } from './styles';
-import { getLanguage } from 'helpers';
 
 const ProfilePresentation = ({ values }) => {
   const { navigate } = useNavigation();

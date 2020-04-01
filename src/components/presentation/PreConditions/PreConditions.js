@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { View, FlatList } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { useTranslation } from 'react-i18next';
@@ -8,15 +8,10 @@ import Button from 'components/core/Button';
 import Checkbox from 'components/core/Checkbox';
 import COLORS from 'config/colors';
 import { Container, ConditionsContainer, CheckContainer, Separator } from './styles';
-import { getLanguage } from 'helpers';
 
 const PreConditionsPresentation = () => {
   const { navigate } = useNavigation();
-  const { t: translate, i18n } = useTranslation();
-
-  useEffect(() => {
-    i18n.changeLanguage(getLanguage());
-  }, []);
+  const { t: translate } = useTranslation();
 
   return (
     <Container>
@@ -43,7 +38,7 @@ const PreConditionsPresentation = () => {
           keyExtractor={item => item.id.toString()}
         />
       </ConditionsContainer>
-      <Button label={translate('next')} action={() => navigate('Risk')} />
+      <Button onPress={() => navigate('Risk')}>{translate('next')}</Button>
     </Container>
   );
 };
