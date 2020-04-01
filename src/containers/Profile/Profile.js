@@ -4,9 +4,6 @@ import { Creators as profileActions } from 'store/ducks/profile';
 import { ProfilePresentation } from 'components/presentation/Profile';
 
 const ProfileContainer = () => {
-  const dispatch = useDispatch();
-  const reducer = useSelector((state) => state.profile);
-
   return <ProfilePresentation />;
 }
 

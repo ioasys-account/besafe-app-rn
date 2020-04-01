@@ -3,7 +3,7 @@ import React from 'react';
 import { KeyboardAvoidingView, Platform, StatusBar } from 'react-native';
 import { Provider } from 'react-redux';
 
-import store from 'store/reducerConfig';
+import store from 'store';
 
 import Navigator from 'config/routes';
 import COLORS from 'config/colors';
