@@ -40,7 +40,7 @@ const ProfilePresentation = () => {
         <DatePicker label={translate('profile-birthdate')} marginTop={24} />
         <Checkbox label='Manter meus dados em sigilo' marginTop={24} />
       </FormContainer>
-      <Button label={translate('next')} action={() => navigate('PreConditions')} />
+      <Button onPress={() => navigate('PreConditions')}>{translate('next')}</Button>
     </Container>
   );
 };

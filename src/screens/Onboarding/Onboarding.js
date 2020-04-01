@@ -41,12 +41,7 @@ const Onboarding = () => {
       >
         {t('onboarding-text')}
       </Label>
-      <Button
-        label={t('onboarding-buttonAgree')}
-        action={onPressAgreed}
-        width={width - 80}
-        primary
-      />
+      <Button onPress={onPressAgreed}>{t('onboarding-buttonAgree')}</Button>
     </StyledContainer>
   );
 };

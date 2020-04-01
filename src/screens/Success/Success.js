@@ -1,24 +1,24 @@
 import React from 'react';
 import { View } from 'react-native';
-
+import { useTranslation } from 'react-i18next';
 import { useNavigation } from '@react-navigation/native';
 import PropTypes from 'prop-types';
-import { useTranslation } from 'react-i18next';
 
 import { Container, SuccessIcon } from 'screens/Success/styles';
 import Header from 'components/core/Header';
 import Label from 'components/core/Label';
 import COLORS from 'config/colors';
 import Button from 'components/core/Button';
-import { getLanguage } from 'helpers';
 
 const Success = ({
   route: {
     params: { title, subTitle }
   }
 }) => {
-  const { navigate, goBack } = useNavigation();
+  const { goBack, reset } = useNavigation();
   const { t: translate } = useTranslation();
+
+  const onPressButton = () => reset({ index: 0, routes: [{ name: 'Onboarding' }] });
 
   return (
     <Container>
@@ -41,7 +41,7 @@ const Success = ({
           </Label>
         </View>
       </View>
-      <Button label={translate('lets-go')} action={() => navigate('Home')} />
+      <Button onPress={onPressButton}>{translate('lets-go')}</Button>
     </Container>
   );
 };

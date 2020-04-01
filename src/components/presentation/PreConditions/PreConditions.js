@@ -38,7 +38,7 @@ const PreConditionsPresentation = () => {
           keyExtractor={item => item.id.toString()}
         />
       </ConditionsContainer>
-      <Button label={translate('next')} action={() => navigate('Risk')} />
+      <Button onPress={() => navigate('Risk')}>{translate('next')}</Button>
     </Container>
   );
 };

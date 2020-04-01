@@ -1,42 +1,102 @@
+/* eslint-disable react/jsx-props-no-spreading */
+/* eslint-disable react/destructuring-assignment */
 import React from 'react';
-import styled from 'styled-components/native';
+import { ActivityIndicator } from 'react-native';
 import PropTypes from 'prop-types';
-
-import Label from './Label';
+import styled from 'styled-components';
 
 import COLORS from 'config/colors';
 
-const Button = ({ label, action, ...props }) => (
-  <Container {...props} onPress={(...parameters) => action(...parameters)}>
-    <Label color={props.primary ? COLORS.white : COLORS.red} fontSize={18}>
-      {label}
-    </Label>
-  </Container>
+const Button = props => (
+  <StyledTouchableOpacity onPress={props.onPress} {...props}>
+    {props.isLoading ? (
+      <ActivityIndicator size='small' color={props.loadingColor} />
+    ) : (
+      <StyledText {...props}>{props.children}</StyledText>
+    )}
+  </StyledTouchableOpacity>
 );
 
-const Container = styled.TouchableOpacity`
-  align-items: center;
-  justify-content: center;
-  height: 50px;
-  width: ${({ width }) => (width ? `${width}px` : 'auto')};
-  background-color: ${({ primary }) => (primary ? COLORS.red : 'transparent')};
-  border-radius: 40px;
-  border: ${({ primary }) => (primary ? 'none' : `solid 2px ${COLORS.red}`)};
-  margin-top: ${({ marginTop }) => marginTop}px;
-`;
+Button.defaultProps = {
+  width: '100%',
+  height: '50',
+  justifyContent: 'center',
+  alignItems: 'center',
+  textColor: COLORS.white,
+  fontWeight: '200',
+  fontSize: 18,
+  textAlign: 'center',
+  borderRadius: 40,
+  borderWidth: 0,
+  borderColor: 'transparent',
+  marginTop: 0,
+  marginBottom: 0,
+  marginLeft: 0,
+  marginRight: 0,
+  backgroundColor: COLORS.primary,
+  position: 'relative',
+  top: 0,
+  left: 0,
+  right: 0,
+  bottom: 0,
+  loadingColor: COLORS.primary,
+  onPress: () => {},
+  isLoading: false
+};
 
 Button.propTypes = {
-  label: PropTypes.string,
-  primary: PropTypes.bool,
-  action: PropTypes.func,
-  marginTop: PropTypes.number
+  fontSize: PropTypes.number,
+  width: PropTypes.string,
+  height: PropTypes.string,
+  backgroundColor: PropTypes.string,
+  justifyContent: PropTypes.string,
+  alignItems: PropTypes.string,
+  textColor: PropTypes.string,
+  fontWeight: PropTypes.string,
+  textAlign: PropTypes.string,
+  borderRadius: PropTypes.number,
+  borderWidth: PropTypes.number,
+  borderColor: PropTypes.string,
+  marginTop: PropTypes.number,
+  marginBottom: PropTypes.number,
+  marginRight: PropTypes.number,
+  marginLeft: PropTypes.number,
+  position: PropTypes.string,
+  top: PropTypes.number,
+  bottom: PropTypes.number,
+  left: PropTypes.number,
+  right: PropTypes.number,
+  loadingColor: PropTypes.string,
+  children: PropTypes.shape({}).isRequired,
+  onPress: PropTypes.func,
+  isLoading: PropTypes.bool
 };
 
-Button.defaultProps = {
-  label: '',
-  primary: true,
-  action: () => {},
-  marginTop: 0
-};
+const StyledTouchableOpacity = styled.TouchableOpacity`
+  width: ${({ width }) => width};
+  height: ${({ height }) => height};
+  display: flex;
+  justify-content: ${({ justifyContent }) => justifyContent};
+  align-items: ${({ alignItems }) => alignItems};
+  margin-top: ${({ marginTop }) => marginTop};
+  margin-bottom: ${({ marginBottom }) => marginBottom};
+  margin-left: ${({ marginLeft }) => marginLeft};
+  margin-right: ${({ marginRight }) => marginRight};
+  border-width: ${({ borderWidth }) => borderWidth};
+  border-color: ${({ borderColor }) => borderColor};
+  border-radius: ${({ borderRadius }) => borderRadius};
+  background-color: ${({ backgroundColor }) => backgroundColor};
+  position: ${({ position }) => position};
+  top: ${({ top }) => top};
+  bottom: ${({ bottom }) => bottom};
+  left: ${({ left }) => left};
+  right: ${({ right }) => right};
+`;
+
+const StyledText = styled.Text`
+  font-weight: ${({ fontWeight }) => fontWeight};
+  text-align: ${({ textAlign }) => textAlign};
+  color: ${({ textColor }) => textColor};
+`;
 
 export default Button;
