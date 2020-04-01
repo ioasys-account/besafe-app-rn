@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { useTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
@@ -17,6 +17,7 @@ import { getLanguage } from 'helpers';
 const ProfilePresentation = ({ values }) => {
   const { navigate } = useNavigation();
   const { t: translate, i18n } = useTranslation();
+  const [name, setName] = useState('');
 
   useEffect(() => {
     i18n.changeLanguage(getLanguage());
@@ -47,9 +48,9 @@ const ProfilePresentation = ({ values }) => {
             <TextInput
               placeholder={translate('profile-fullname')}
               marginTop={24}
-              onChange={value => setFieldValue('name', value)}
-              hasError={errors.name}
-              value={values.name}
+              onChange={value => setName(value)}
+              hasError={name}
+              value={name}
             />
             {errors.name && <Label color={COLORS.red}>{translate('required-field')}</Label>}
             {/* <Picker
