@@ -1,6 +1,7 @@
 import React from 'react';
 import { useWindowDimensions } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { useTranslation } from 'react-i18next';
 
 import Label from 'components/core/Label';
 import Button from 'components/core/Button';
@@ -11,8 +12,9 @@ import { setStoreItem } from 'config/storage';
 import { StyledContainer } from './styles';
 
 const Onboarding = () => {
-  const { width } = useWindowDimensions();
   const { replace } = useNavigation();
+  const { width } = useWindowDimensions();
+  const { t } = useTranslation();
 
   const onPressAgreed = () => {
     setStoreItem('@BeSafe:TermAgreed', 'true', () => replace('Profile'));
@@ -27,7 +29,7 @@ const Onboarding = () => {
         color={COLORS.black}
         textAlign='center'
       >
-        Título do Onboarding
+        {t('onboarding-title')}
       </Label>
       <Label
         fontSize={21}
@@ -37,10 +39,14 @@ const Onboarding = () => {
         marginTop={30}
         marginBottom={40}
       >
-        Parágrafo curto falando do objetivo do app e da importância de todos nós se juntarmos contra
-        o Corona.
+        {t('onboarding-text')}
       </Label>
-      <Button label='Concordar' action={onPressAgreed} width={width - 80} primary />
+      <Button
+        label={t('onboarding-buttonAgree')}
+        action={onPressAgreed}
+        width={width - 80}
+        primary
+      />
     </StyledContainer>
   );
 };

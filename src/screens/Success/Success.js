@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { View } from 'react-native';
 
 import { useNavigation } from '@react-navigation/native';
@@ -18,11 +18,7 @@ const Success = ({
   }
 }) => {
   const { navigate, goBack } = useNavigation();
-  const { t: translate, i18n } = useTranslation();
-
-  useEffect(() => {
-    i18n.changeLanguage(getLanguage());
-  }, []);
+  const { t: translate } = useTranslation();
 
   return (
     <Container>

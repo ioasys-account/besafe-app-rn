@@ -9,5 +9,9 @@ export default {
   'risk-assessment-title': 'Risk assessment',
   'risk-assessment-subtitle': "Check the risky behaviors you've been on.",
   'profile-saved-successfully':
-    "Now it's time to record how you feel. Please be considerate and rest assured: let's deal with this together!"
+    "Now it's time to record how you feel. Please be considerate and rest assured: let's deal with this together!",
+  'onboarding-title': 'Onboarding title',
+  'onboarding-text':
+    'Parágrafo curto falando do objetivo do app e da importância de todos nós se juntarmos contra o Corona.',
+  'onboarding-buttonAgree': 'I agree'
 };

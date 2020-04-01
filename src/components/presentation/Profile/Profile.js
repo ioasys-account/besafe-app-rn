@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { useTranslation } from 'react-i18next';
 
@@ -10,17 +10,11 @@ import Checkbox from 'components/core/Checkbox';
 import Button from 'components/core/Button';
 import COLORS from 'config/colors';
 
-import { getLanguage } from 'helpers';
-
 import { FormContainer, Container } from './styles';
 
 const ProfilePresentation = () => {
   const { navigate } = useNavigation();
-  const { t: translate, i18n } = useTranslation();
-
-  useEffect(() => {
-    i18n.changeLanguage(getLanguage());
-  }, []);
+  const { t: translate } = useTranslation();
 
   return (
     <Container>
