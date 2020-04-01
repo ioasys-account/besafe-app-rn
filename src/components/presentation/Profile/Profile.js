@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { useTranslation } from 'react-i18next';
 
@@ -9,16 +9,12 @@ import DatePicker from 'components/core/DatePicker';
 import Checkbox from 'components/core/Checkbox';
 import Button from 'components/core/Button';
 import COLORS from 'config/colors';
+
 import { FormContainer, Container } from './styles';
-import { getLanguage } from 'helpers';
 
 const ProfilePresentation = () => {
   const { navigate } = useNavigation();
-  const { t: translate, i18n } = useTranslation();
-
-  useEffect(() => {
-    i18n.changeLanguage(getLanguage());
-  }, []);
+  const { t: translate } = useTranslation();
 
   return (
     <Container>
@@ -30,8 +26,7 @@ const ProfilePresentation = () => {
         <Picker
           placeholder={translate('gender')}
           marginTop='24px'
-          options={
-            [
+          options={[
             {
               label: translate('profile-female'),
               value: 'female'
@@ -45,7 +40,7 @@ const ProfilePresentation = () => {
         <DatePicker label={translate('profile-birthdate')} marginTop={24} />
         <Checkbox label='Manter meus dados em sigilo' marginTop={24} />
       </FormContainer>
-      <Button label={translate('next')} action={() => navigate('PreConditions')} />
+      <Button onPress={() => navigate('PreConditions')}>{translate('next')}</Button>
     </Container>
   );
 };
