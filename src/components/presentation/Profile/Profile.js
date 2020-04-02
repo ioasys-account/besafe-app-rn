@@ -11,7 +11,7 @@ import Button from 'components/core/Button';
 import COLORS from 'config/colors';
 import { getLanguage } from 'helpers';
 import { FormContainer, Container } from './styles';
-import Loader from 'components/core/Loader';
+import Toast from 'components/core/Toast';
 
 const ProfilePresentation = ({ values, setFieldValue, isLoading }) => {
   const { navigate } = useNavigation();
@@ -59,6 +59,7 @@ const ProfilePresentation = ({ values, setFieldValue, isLoading }) => {
       <Button fontSize={18} onPress={() => navigate('PreConditions')} isLoading={isLoading}>
         {translate('next')}
       </Button>
+      <Toast show={} />
     </Container>
   );
 };

@@ -20,6 +20,14 @@ const ProfileContainer = () => {
     dispatch(profileActions.updateProfileRequest());
   }, []);
 
+  useEffect(() => {
+    dispatch(profileActions.updateProfileSuccess());
+  }, [reducer.data]);
+
+  useEffect(() => {
+    dispatch(profileActions.updateProfileFail());
+  }, [reducer.errors]);
+
   const setFieldValue = (field, value) => {
     setValues({
       ...values,
@@ -32,6 +40,7 @@ const ProfileContainer = () => {
       setFieldValue={setFieldValue}
       values={values}
       isLoading={reducer.isLoading}
+      errors={reducer.errors}
     />
   );
 };

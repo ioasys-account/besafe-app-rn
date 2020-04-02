@@ -1,7 +1,7 @@
 import { createActions, createReducer } from 'reduxsauce';
 
 export const { Types, Creators } = createActions({
-  updateProfileRequest: ['payload'],
+  updateProfileRequest: [''],
   updateProfileSuccess: ['data'],
   updateProfileFail: ['errors'],
 });
