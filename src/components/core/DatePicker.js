@@ -42,11 +42,11 @@ const DatePicker = ({
         {show && (
           <DateTimePicker
             timeZoneOffsetInMinutes={now.getTimezoneOffset()}
-            value={now}
+            value={value}
             display='default'
             onChange={event => {
               setShow(false);
-              onChange(event);
+              onChange(event.nativeEvent.timestamp);
             }}
           />
         )}
@@ -62,7 +62,7 @@ DatePicker.propTypes = {
   marginRight: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   marginLeft: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   marginTop: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  date: PropTypes.object
+  value: PropTypes.object
 };
 
 DatePicker.defaultProps = {
@@ -72,7 +72,7 @@ DatePicker.defaultProps = {
   marginRight: 0,
   marginLeft: 0,
   marginTop: 0,
-  date: {}
+  value: new Date()
 };
 
 export default DatePicker;

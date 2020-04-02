@@ -1,10 +1,39 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Creators as profileActions } from 'store/ducks/profile';
 import { ProfilePresentation } from 'components/presentation/Profile';
 
 const ProfileContainer = () => {
-  return <ProfilePresentation />;
-}
+  const [values, setValues] = useState({
+    name: '',
+    gender: {
+      label: '',
+      value: ''
+    },
+    date: new Date()
+  });
+
+  const dispatch = useDispatch();
+  const reducer = useSelector(({ profile }) => profile);
+
+  useEffect(() => {
+    dispatch(profileActions.updateProfileRequest());
+  }, []);
+
+  const setFieldValue = (field, value) => {
+    setValues({
+      ...values,
+      [field]: value
+    });
+  };
+
+  return (
+    <ProfilePresentation
+      setFieldValue={setFieldValue}
+      values={values}
+      isLoading={reducer.isLoading}
+    />
+  );
+};
 
 export default ProfileContainer;

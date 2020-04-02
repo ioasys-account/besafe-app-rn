@@ -25,7 +25,7 @@ const TextInput = ({
   hasError
 }) => (
   <Input
-    onChange={onChange}
+    onChangeText={onChange}
     placeholder={placeholder}
     value={value}
     placeholderTextColor={COLORS.defaultTextLight}
