@@ -1,14 +1,14 @@
 import { createActions, createReducer } from 'reduxsauce';
 
 export const { Types, Creators } = createActions({
-  updateProfileRequest: [''],
+  updateProfileRequest: ['payload'],
   updateProfileSuccess: ['data'],
   updateProfileFail: ['errors'],
 });
 
 const INITIAL_STATE = {
   isLoading: false,
-  data: [],
+  data: {},
   errors: [],
 };
 
@@ -17,12 +17,14 @@ const updateProfileSuccess = (state, { data }) => ({
   ...state,
   data,
   isLoading: false,
+  errors: [],
 });
-const updateProfileFail = (state, { errors }) => ({
+const updateProfileFail = (state, { errors }) => {
+  return {
   ...state,
   errors,
-  isLoading: false,
-});
+  isLoading: false,}
+};
 
 export default createReducer(INITIAL_STATE, {
   [Types.UPDATE_PROFILE_REQUEST]: updateProfileRequest,

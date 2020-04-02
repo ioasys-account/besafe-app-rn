@@ -47,9 +47,6 @@ const Toast = ({ message, type, show }) => {
       <Label color={COLORS.white} fontSize={18}>
         {message}
       </Label>
-      <Label color={COLORS.white} fontSize={20}>
-        X
-      </Label>
     </Container>
   );
 };

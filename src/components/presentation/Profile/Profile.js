@@ -13,7 +13,7 @@ import { getLanguage } from 'helpers';
 import { FormContainer, Container } from './styles';
 import Toast from 'components/core/Toast';
 
-const ProfilePresentation = ({ values, setFieldValue, isLoading }) => {
+const ProfilePresentation = ({ values, setFieldValue, isLoading, errors, messageError, onSubmit }) => {
   const { navigate } = useNavigation();
   const { t: translate, i18n } = useTranslation();
 
@@ -56,10 +56,10 @@ const ProfilePresentation = ({ values, setFieldValue, isLoading }) => {
           onChange={value => setFieldValue('date', new Date(value))}
         />
       </FormContainer>
-      <Button fontSize={18} onPress={() => navigate('PreConditions')} isLoading={isLoading}>
+      <Button fontSize={18} onPress={onSubmit} isLoading={isLoading}>
         {translate('next')}
       </Button>
-      <Toast show={} />
+      <Toast show={errors.length !== 0} type='error' message={messageError} />
     </Container>
   );
 };
@@ -67,11 +67,15 @@ const ProfilePresentation = ({ values, setFieldValue, isLoading }) => {
 ProfilePresentation.propTypes = {
   onSubmit: PropTypes.func.isRequired,
   setFieldValue: PropTypes.func.isRequired,
-  isLoading: PropTypes.func
+  isLoading: PropTypes.func,
+  errors: PropTypes.arrayOf(PropTypes.string),
+  messageError: PropTypes.string
 };
 
 ProfilePresentation.defaultProps = {
-  isLoading: false
+  isLoading: false,
+  errors: [],
+  messageError: ''
 };
 
 export default ProfilePresentation;

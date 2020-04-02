@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, Animated, Easing } from 'react-native';
+import { Animated, Easing } from 'react-native';
 import icon from 'assets/icons/Loader.png';
 
 const Loader = () => {

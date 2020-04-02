@@ -4,5 +4,6 @@ export default {
   'register-completed': 'Register completed',
   'lets-go': "Let's go!",
   back: 'Back',
-  'required-field': 'Required field!'
+  'required-field': 'There are empty fields!',
+  'generic-error': 'An unexpected error occurred!'
 };
