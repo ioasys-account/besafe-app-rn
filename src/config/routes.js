@@ -19,7 +19,7 @@ const Navigator = () => {
 
   useLayoutEffect(() => {
     getStoreItem('@BeSafe:TermAgreed', termAcepted => {
-      setInitialRoute(termAcepted === 'true' ? 'Profile' : 'Profile');
+      setInitialRoute(termAcepted === 'true' ? 'Profile' : 'PreConditions');
     });
   }, []);
 
